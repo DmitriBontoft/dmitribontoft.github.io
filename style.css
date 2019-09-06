@@ -1,0 +1,138 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+
+header {
+    position: fixed;
+    top: 0px;
+    height: 100px;
+    width: 100%;
+    min-width: 400px;
+    background: white;
+    opacity: 1;
+    z-index: 100;
+}
+
+header ul {
+    list-style: none;
+}
+
+header ul li {
+    display: inline-block;
+}
+
+h1 {
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    font-size: 30px;
+}
+
+header h1 {
+    display: inline-block;
+    padding: 10px;
+}
+
+h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    padding: 10px;
+}
+
+nav a {
+    margin: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    background-color: #ebebeb;
+    margin-top: 100px;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+section {
+
+    border: solid 1px black;
+    
+}
+
+article { 
+    max-width: 300px;
+    margin: 10px 10px;
+    border: dotted 1px black;
+    
+}
+
+.intro {
+    max-width: 400px;
+
+}
+
+article img {
+    width: 100%;
+}
+
+.left {
+  
+    float: left;
+    vertical-align: top;
+    width: 400px;
+    position: fixed;
+}
+
+.right {
+    float: right;
+    vertical-align: top;
+    margin-left: 400px; 
+}
+
+.event {
+    /* float: left; */
+    position: relative;
+    width: auto;
+}
+ 
+.event .content {
+    background: whitesmoke;
+    bottom: 0;
+    height: 68px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    transition: all .5s ease; /*Add this line!*/
+    width: 100%;
+}
+ 
+.event h3, .event h2 {
+    height: 68px; /*So nothing funny shows below*/
+    margin: 0;
+    padding: 18px 85px 15px 20px;
+}
+
+ 
+.event .rollover {
+    padding: 18px 20px;
+    opacity: 0;
+    transition: all .5s ease; /*Add this line!*/
+}
+
+.event:hover .content {
+    background: whitesmoke;
+    height: 100%;
+}
+ 
+.event:hover .rollover {
+    opacity: 1;
+}

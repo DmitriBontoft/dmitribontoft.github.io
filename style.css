@@ -5,15 +5,21 @@
     --left-col-width: 400px;
     --article-max-width: 300px; 
     --mobile-width: 500px;
+    --header-height: 100px;
+}
+
+@media screen and (max-width: 700px) {
+    * {
+        --header-height: 150px;
+    }
 }
 
 
 header {
     position: fixed;
     top: 0px;
-    height: 100px;
+    height: var(--header-height);
     width: 100%;
-    min-width: 400px;
     background: white;
     opacity: 1;
     z-index: 100;
@@ -36,6 +42,8 @@ h1 {
 header h1 {
     display: inline-block;
     padding: 10px;
+    text-align: center;
+    margin-block-end: 0;
 }
 
 h1 a {
@@ -47,18 +55,35 @@ nav {
     display: inline-block;
     position: absolute;
     right: 0;
-    padding: 10px;
+    padding: 10px;   
+    margin-block-start: 20px;
+    margin-block-end: 20px;
+ 
+}
+
+@media screen and (max-width: 700px) {
+    nav {
+        display: block;
+        position: relative;
+        right: 0;
+        padding: 10px;   
+        margin-block-start: 0;
+        margin-block-end: 0;
+     
+    }
+    
 }
 
 nav a {
     margin: 10px;
     text-decoration: none;
     color: inherit;
+
 }
 
 main {
     background-color: #ebebeb;
-    margin-top: 100px;
+    margin-top: var(--header-height);
 }
 
 .flex-container {

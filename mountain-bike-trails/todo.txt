@@ -1,0 +1,6 @@
+--Mobile first
+--Change rollover for mobile
+--Content for me
+--Content for my bike
+--Remove duplicate trails
+-- align nav and title

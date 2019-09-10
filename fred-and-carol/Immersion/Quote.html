@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Fred And Carol - French Immersion</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/Immersion">French Immersion</a>
+            <a href="/Lessons">French Lessons</a>
+            <a href="/Cookery">Cookery Lessons</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>French Immersion Quote</h1>
+            <p>Build your package with this form and press 'calculate' for a price.</p>
+            <form action="Quote.html" method="GET">
+                <section>
+                    <label for="single">Single Occupancy</label>
+                    <input type="radio" id="single" name="occupancy" value="single" checked />
+                    <label for="double">Double Occupancy</label>
+                    <input type="radio" id="double" name="occupancy" value="double"/>
+                </section>
+                <section>
+                    <label for="length">Length of Stay (weeks)</label>
+                    <input id="length" type="number" value="1" min="1" max="12" />
+                </section>
+                <section>
+                    <label for="half-board">Half Board</label>
+                    <input type="radio" id="half-board" name="board" value="half" checked />
+                    <label for="full-board">Full Board</label>
+                    <input type="radio" id="full-board" name="board" value="full" />
+                </section>
+                <section>
+                    <label for="package">Choose your package</label>
+                    <select id="package" name="package">
+                        <option value="homestay" selected>Homestay</option>
+                        <option value="ski">Ski</option>
+                        <option value="culture">Culture</option>
+                        <option value="mtb">MTB</option>
+                        <option value="gourmet">Gourmet</option>
+                        <option value="wellness">Wellness</option>
+                        <option value="adrenaline">Adrenaline</option>
+                        <option value="paragliding">Paragliding</option>
+                    </select>
+                </section>
+                <section>
+                    <input type="submit" value="Calculate" />
+                </section>
+
+            </form>
+            <aside>
+                <h2>Long stay discount</h2>
+                <p>For a 2 week stay or longer: </p>
+                <p>10% discount over the total price.</p>
+            </aside>
+            <aside>
+                <h2>Transfers</h2>
+                <p>If you arrive by train to Cluses or Thonon, we will pick you up FREE OF CHARGE!</p>
+                <p>If you land at Genèva airport, we can book a transfer for you (chargeable locally).</p>
+            </aside>
+        </section>
+        
+    </main>
+    <footer>
+        <p>F&C Experience ©2019  - French immersion in the Alps - <a href="mailto:hello@fcmorzine.com" target="_self">hello@fcmorzine.com</a></p>
+    </footer>
+</body>
+</html>

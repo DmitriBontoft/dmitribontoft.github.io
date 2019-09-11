@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0 0 0 0;
+}
+
+
+
+header {
+    position: fixed;
+    top: 0px;
+    height: 100px;
+    width: 100%;
+    background: white;
+    opacity: 1;
+    z-index: 999;
+    display: flex;
+}
+
+header img {
+    height: 100px;
+}
+
+nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+nav a {
+    vertical-align: middle;
+    line-height: 100px;
+    padding: 10px 10px 10px 10px;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+}
+
+
+
+
+main {
+    margin-top: 100px;
+}
+
+@media screen and (max-width: 735px)
+{
+    header{
+        height: auto;
+        position: relative;
+        display: block;
+    }
+    header img{
+        text-align: center;
+    }
+
+    nav {
+        position: relative;
+
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        line-height: normal;
+        text-align: center;
+        border: solid 1px black;
+    }
+
+    main { 
+        margin-top: 0;
+    }
+}
+
+p {
+    margin-block-end: 10px;
+}
+
+h1, h2 {
+    margin-block-end: 10px;
+}
+
+.banner{
+    width: 100%;
+    position: relative;
+    border: solid 1px;
+    padding: 10px;
+    color: white;
+}
+
+.banner .text {
+    margin: 10px 10px 10px 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+
+.banner .heading {
+    font-size: 60px;
+    font-weight: bold;
+    margin: 30px 10px 10px 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.banner .image {
+    width: 100%;
+    max-height: 400px;
+}
+
+@media screen and (max-width: 735px)
+{
+    .banner .heading {
+        font-size: 30px;
+    }
+}
+
+
+.half-section {
+    width: 100%;
+    border: solid 1px;
+    padding: 10px;
+    display: flex;
+}
+
+.half-section .text {
+    padding: 10px;
+    
+}
+
+.half-section .text.right {
+    text-align: right;
+    
+}
+
+.half-section .text a {
+    background-color: crimson;
+    padding: 10px;
+    color:white;
+    text-decoration: none;
+    display: inline-block;
+    margin-block-start: 20px;
+    border-radius: 10px;
+
+}
+
+
+.half-section .image {
+    max-width: 300px;
+    align-content: stretch;
+}
+
+@media screen and (max-width: 735px)
+{
+    .half-section {
+        display: block;
+    }
+.half-section .image  {
+    width: 100%;
+    max-width: 100%;
+
+    }
+
+    .half-section .text {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+article img {
+    width: 100%;
+    position: relative;
+}
+

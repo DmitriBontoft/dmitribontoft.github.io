@@ -40,8 +40,6 @@ nav a {
 }
 
 
-
-
 main {
     margin-top: 100px;
 }
@@ -256,6 +254,10 @@ h1, h2 {
     }
 }
 
+
+
+
+
 /* */
 
 aside {
@@ -266,11 +268,144 @@ aside {
     margin: auto 15px;
 }
 
+@media screen and (min-width: 1000px)
+{
+    aside {
+        width: 45%;
+        
+        float: left;
+        vertical-align: top;
+    }
+
+    .half-section {
+        width: 45%;
+   
+        float: left;
+        
+        vertical-align: top;
+    }
+}
+
+/*  */
+form {
+    margin: 10px;
+    
+}
+
+select {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    font-weight: bold;
+  }
+
+  input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  /* Hide unstylable radio buttons */
+  input[type=radio] {
+    opacity: 0;
+    width: 0;
+    margin: 0;
+  }
+
+  label[for="single-occupancy"], label[for="double-occupancy"],
+  label[for="half-board"], label[for="full-board"]{
+      margin-bottom: 10px;
+      display: inline-block;
+      cursor: pointer;
+      background-repeat: no-repeat;   
+  }
+
+  label[for="single-occupancy"], 
+  label[for="double-occupancy"] {
+    background-size: 25px 25px;
+    background-position: 5px 5px;
+    padding: 10px 10px 10px 36px;
+}
+
+label[for="half-board"] {
+  height: 150px;
+  background-size: 300px 150px;
+  background-position: 5px 5px;
+  padding: 10px 10px 10px 470px;
+}
+
+label[for="full-board"]  {
+  height: 150px;
+  background-size: 450px 150px;
+  background-position: 5px 5px;
+  padding: 10px 10px 10px 470px;
+}
+
+input[type="radio"]:checked + label[for="half-board"], 
+input[type="radio"]:checked + label[for="full-board"] ,
+  input[type="radio"]:checked + label[for="single-occupancy"], 
+  input[type="radio"]:checked + label[for="double-occupancy"] {
+    background-color: #4CAF50;
+}
+
+
+  label[for="single-occupancy"]{
+    background-image: url(../images/icons/one-person.png);
+    
+}  
+
+label[for="double-occupancy"]{
+    background-image: url(../images/icons/two-people.png);
+}
+
+label[for="half-board"]{
+    background-image: url(../images/icons/half-board.png);
+    
+}  
+
+label[for="full-board"]{
+    background-image: url(../images/icons/full-board.png);
+}
+
+form section {
+    background-color: #f1f1f1;
+    border: solid 1px black;
+    padding: 10px;
+}
+
+@media screen and (min-width: 1000px)
+{
+    section.aside {
+        width:30%;
+        
+        float: left;
+        vertical-align: top;
+    }
+
+    form {
+        width: 60%;
+   
+        float: left;
+        
+        vertical-align: top;
+    }
+}
+
 /* */
 
 footer p {
     line-height: 75px;
     text-align: center;
+    vertical-align: bottom;
+    width: 100%;
+    clear: both;
 }
 
 

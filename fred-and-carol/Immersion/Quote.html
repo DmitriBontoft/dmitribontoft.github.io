@@ -1,11 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8"../>
+    <meta charset="utf-8" .. />
     <title>Fred And Carol - French Immersion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../styles/main.css" />
 </head>
+
 <body>
     <header>
         <img src="../images/montagne.png" />
@@ -22,22 +24,6 @@
             <p>Build your package with this form and press 'calculate' for a price.</p>
             <form action="Quote.html" method="GET">
                 <section>
-                    <label for="single">Single Occupancy</label>
-                    <input type="radio" id="single" name="occupancy" value="single" checked />
-                    <label for="double">Double Occupancy</label>
-                    <input type="radio" id="double" name="occupancy" value="double"../>
-                </section>
-                <section>
-                    <label for="length">Length of Stay (weeks)</label>
-                    <input id="length" type="number" value="1" min="1" max="12"../>
-                </section>
-                <section>
-                    <label for="half-board">Half Board</label>
-                    <input type="radio" id="half-board" name="board" value="half" checked />
-                    <label for="full-board">Full Board</label>
-                    <input type="radio" id="full-board" name="board" value="full"../>
-                </section>
-                <section>
                     <label for="package">Choose your package</label>
                     <select id="package" name="package">
                         <option value="homestay" selected>Homestay</option>
@@ -51,10 +37,37 @@
                     </select>
                 </section>
                 <section>
-                    <input type="submit" value="Calculate"../>
+                    <fieldset>
+                        <legend>Meals</legend>
+                        <input type="radio" id="half-board" name="board" value="half" checked />
+                        <label for="half-board">Half Board</label>
+                        <input type="radio" id="full-board" name="board" value="full" .. />
+                        <label for="full-board">Full Board</label>
+                    </fieldset>
+                </section>
+                <section>
+                    <fieldset>
+                        <legend>Occupancy</legend>
+                        <input type="radio" id="single-occupancy" name="occupancy" value="single" checked />
+                        <label for="single-occupancy">Single</label>
+                        <input type="radio" id="double-occupancy" name="occupancy" value="double" .. />
+                        <label for="double-occupancy">Double</label>
+
+                    </fieldset>
+                </section>
+                <section>
+                    <label for="length">Length of Stay (weeks)</label>
+                    <input id="length" type="number" value="1" min="1" max="12" .. />
+                </section>
+
+
+                <section>
+                    <input type="submit" value="Calculate" .. />
                 </section>
 
             </form>
+        </section>
+        <section class="aside">
             <aside>
                 <h2>Long stay discount</h2>
                 <p>For a 2 week stay or longer: </p>
@@ -66,10 +79,12 @@
                 <p>If you land at Genèva airport, we can book a transfer for you (chargeable locally).</p>
             </aside>
         </section>
-        
+
     </main>
     <footer>
-        <p>F&C Experience ©2019  - French immersion in the Alps - <a href="mailto:hello@fcmorzine.com" target="_self">hello@fcmorzine.com</a></p>
+        <p>F&C Experience ©2019 - French immersion in the Alps - <a href="mailto:hello@fcmorzine.com"
+                target="_self">hello@fcmorzine.com</a></p>
     </footer>
 </body>
+
 </html>

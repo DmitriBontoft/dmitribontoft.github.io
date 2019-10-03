@@ -299,6 +299,12 @@ select {
     border-radius: 4px;
     background-color: #f1f1f1;
     font-weight: bold;
+    font-size: 20px;
+  }
+
+  option {
+      font-weight: bold;
+      font-size: 20px;
   }
 
   input[type=button], input[type=submit], input[type=reset] {
@@ -325,6 +331,8 @@ select {
       display: inline-block;
       cursor: pointer;
       background-repeat: no-repeat;   
+      
+    background-color: bisque;
   }
 
   label[for="single-occupancy"], 
@@ -336,16 +344,16 @@ select {
 
 label[for="half-board"] {
   height: 150px;
-  background-size: 300px 150px;
+  background-size: 300px 140px;
   background-position: 5px 5px;
-  padding: 10px 10px 10px 470px;
+  padding-left: 300px;
 }
 
 label[for="full-board"]  {
   height: 150px;
-  background-size: 450px 150px;
+  background-size: 425px 140px;
   background-position: 5px 5px;
-  padding: 10px 10px 10px 470px;
+  padding-left: 450px;
 }
 
 input[type="radio"]:checked + label[for="half-board"], 

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* apply a natural box layout model to all elements, but allowing components to change */
+
+
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
+            --lightest-theme: #F7F9FB;
+            --light-theme: #8FC1E3;
+            --medium-theme: #5085A5;
+            --dark-theme: #31708E;
+            --alt-dark-theme: #687864;
+        }
+
+ /*        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        } */
+
+
+ 
+
+        .timeline {
+            text-align: center;
+        }
+
+        .timeline__start,
+        .timeline__end {
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        .timeline__start:after {
+            content: "";
+            display: block;
+            width: 80%;
+            margin: auto;
+            height: 1px;
+            background: green;
+        }
+
+        .timeline__end:before {
+            content: "";
+            display: block;
+            width: 80%;
+            margin: auto;
+            height: 1px;
+            background: green;
+        }
+
+        .timeline--week {
+            width: 100%;
+        }
+
+        .week-description {
+            position: relative;
+            float: left;
+            padding: 30px;
+            text-align: right;
+            width: 50%;
+        }
+
+        .week-description:after {
+            content: "";
+            width: 40%;
+            display: inline-block;
+            height: 1px;
+            background: green;
+            position: absolute;
+            right: 0;
+        }
+
+        .week-description__label {
+            position: absolute;
+            bottom: 0;
+            padding: 30px;
+            right: 40%;
+            width: 150px;
+        }
+
+        .week-description__date {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-50%);
+            padding: 30px;
+            text-align: left;
+            color: green;
+            font-size: 24px;
+            white-space: nowrap;
+        }
+
+        .activities--selector {
+            position: relative;
+            width: 50%;
+            left: 50%;
+            border-left: solid 1px green;
+        }
+
+        
+        .activities--selector__fieldset {
+            border: none;
+            align-content: right;
+        }
+
+        .activities--selector__legend {
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .activities--selector__activity {
+            opacity: 0;
+            height: 0;
+            margin: 0;
+        }
+
+        .activities--selector__activity+label {
+            padding-top: 75px;
+            background-repeat: no-repeat;
+            background-size: 75px 75px;
+            height: 100px;
+            width: 75px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .activities--selector__activity:checked+label,
+        .activities--selector__activity:checked+label:hover {
+            background-color: var(--lightest-theme);
+            cursor: auto;
+            border: solid 1px var(--dark-theme);
+        }
+
+        .activities--selector__activity+.activities--selector__label:hover {
+            background-color: var(--light-theme);
+            border: solid 1px var(--dark-theme);
+        }
+
+        .activities--selector__activity--bg_icon_skis {
+            background-image: url(./icons/skis.png);
+        }
+
+        .activities--selector__activity--bg_icon_chateau {
+            background-image: url(./icons/chateau.png);
+        }
+
+        .activities--selector__activity--bg_icon_map {
+            background-image: url(./icons/map.png);
+        }
+
+        .activities--selector__activity--bg_icon_chalet {
+            background-image: url(./icons/chalet.png);
+        }
+
+        .activities--selector__activity:checked+.activities--selector__label {
+            position: absolute;
+            left: calc(0% - 110px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="timeline">
+        <div class="timeline__start">Arrive</div>
+
+        <div class="timeline--week">
+            <div class="week-description">
+                <div class="week-description__label">Week 1</div>
+                <div class="week-description__date">18 October</div>
+            </div>
+
+            <div class="activities--selector">
+                <fieldset class="activities--selector__fieldset">
+                    <legend class="activities--selector__legend">Select Activity for Week 1</legend>
+                    <input class="activities--selector__activity" type="radio" id="week-1-activity-homestay" name="week-1-activity"
+                        value="homestay" checked>
+                    <label class="activities--selector__label activities--selector__activity--bg_icon_chalet" for="week-1-activity-homestay">Homestay</label>
+                    <input class="activities--selector__activity" type="radio" id="week-1-activity-ski" name="week-1-activity" value="ski">
+                    <label class="activities--selector__label activities--selector__activity--bg_icon_skis" for="week-1-activity-ski">Ski</label>
+                    <input class="activities--selector__activity" type="radio" id="week-1-activity-randonnee" name="week-1-activity"
+                        value="randonnee">
+                    <label class="activities--selector__label activities--selector__activity--bg_icon_map" for="week-1-activity-randonnee">Randonee</label>
+                    <input class="activities--selector__activity .activities--selector__label--activities--selector__activity--bg_icon_chalet" type="radio" id="week-1-activity-culture" name="week-1-activity"
+                        value="culture">
+                    <label class="activities--selector__label activities--selector__activity--bg_icon_chateau" for="week-1-activity-culture">Culture</label>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="timeline--week">
+            <div class="week-description">
+                <div class="week-description__label">Week 2</div>
+                <div class="week-description__date">25 October</div>
+            </div>
+            <div class="activities--selector">
+                <fieldset class="activities--selector__fieldset">
+                    <legend class="activities--selector__legend">Select Activity for Week 2</legend>
+                    <input class="activities--selector__activity" type="radio" id="week-2-activity-homestay" name="week-2-activity"
+                        value="homestay" checked>
+                    <label class="activities--selector__label activities--selector__activity--bg_icon_chalet" for="week-2-activity-homestay">Homestay</label>
+                    <input class="activities--selector__activity" type="radio" id="week-2-activity-ski" name="week-2-activity" value="ski">
+                    <label class="activities--selector__label activities--selector__activity--bg_icon_skis" for="week-2-activity-ski">Ski</label>
+                    <input class="activities--selector__activity" type="radio" id="week-2-activity-randonnee" name="week-2-activity"
+                        value="randonnee">
+                    <label class="activities--selector__label activities--selector__activity--bg_icon_map" for="week-2-activity-randonnee">Randonee</label>
+                    <input class="activities--selector__activity" type="radio" id="week-2-activity-culture" name="week-2-activity"
+                        value="culture">
+                    <label class="activities--selector__label activities--selector__activity--bg_icon_chateau" for="week-2-activity-culture">Culture</label>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="timeline--week">
+            <div class="week-description">
+                <div class="week-description__label">Week 3</div>
+                <div class="week-description__date">1 November</div>
+            </div>
+            <div class="activities--selector">
+                <fieldset class="activities--selector__fieldset">
+                    <legend class="activities--selector__legend">Select Activity for Week 3</legend>
+
+                    <input class="activities--selector__activity" type="radio" id="week-3-activity-homestay" name="week-3-activity"
+                        value="homestay" checked>
+                    <label class="activities--selector__label activities--selector__activity--bg_icon_chalet" for="week-3-activity-homestay">Homestay</label>
+                    <input class="activities--selector__activity" type="radio" id="week-3-activity-ski" name="week-3-activity" value="ski">
+                    <label class="activities--selector__label activities--selector__activity--bg_icon_skis" for="week-3-activity-ski" title="Ski">Ski</label>
+                    <input class="activities--selector__activity" type="radio" id="week-3-activity-randonnee" name="week-3-activity"
+                        value="randonnee">
+                    <label class="activities--selector__label activities--selector__activity--bg_icon_map" for="week-3-activity-randonnee">Randonee</label>
+                    <input class="activities--selector__activity" type="radio" id="week-3-activity-culture" name="week-3-activity"
+                        value="culture">
+                    <label class="activities--selector__label activities--selector__activity--bg_icon_chateau" for="week-3-activity-culture">Culture</label>
+                </fieldset>
+            </div>
+        </div>
+
+
+        <div class="timeline__end">Depart</div>
+    </div>
+</body>
+
+</html>

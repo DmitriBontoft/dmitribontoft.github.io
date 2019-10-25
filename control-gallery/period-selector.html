@@ -27,15 +27,15 @@
             left: 0;
         }
 
-        .period-selector__start-date,
-        .period-selector__end-date {
+        .period-fields__start-date,
+        .period-fields__end-date {
             display: inline-block;
             border: none;
             font-weight: bold;
         }
 
-        .period-selector__start-date:disabled,
-        .period-selector__end-date:disabled {
+        .period-fields__start-date:disabled,
+        .period-fields__end-date:disabled {
             background-color: transparent;
         }
 
@@ -91,6 +91,7 @@
             writing-mode: vertical-rl;
             text-orientation: upright;
             text-align: center;
+            text-transform: uppercase;
             font-weight: bold;
         }
 
@@ -100,13 +101,15 @@
             width: 330px;
         }
 
-        .calendar__month > caption, .calendar__header > caption {
+        .calendar__month>caption,
+        .calendar__header>caption {
             padding: 10px;
             float: right;
             width: 70px;
         }
 
-        .calendar__month > tbody, .calendar__header > thead  {
+        .calendar__month>tbody,
+        .calendar__header>thead {
             float: right;
         }
 
@@ -118,10 +121,10 @@
             height: 30px;
         }
 
-        .calendar__month td[date] {
+        /*         .calendar__month td[date] {
             background-color: var(--lightest-theme);
 
-        }
+        } */
 
         .calendar__month td[date]:hover {
             background-color: var(--dark-theme);
@@ -130,7 +133,7 @@
 
         .calendar__month td[date].calendar__day--unavailable,
         .calendar__month td[date].calendar__day--unavailable:hover {
-            background-color: var(--light-theme);
+            background-color: var(--alt-dark-theme);
             cursor: auto;
         }
 
@@ -146,6 +149,19 @@
         .calendar__day--unavailable:hover {
             background-color: initial;
         }
+
+        .calendar__start-day {
+            background-color: var(--dark-theme);
+        }
+
+        .calendar__end-day {
+            background-color: var(--dark-theme);
+        }
+
+        .calendar__day--in-period{
+
+            background-color: var(--light-theme);
+        }
     </style>
 </head>
 
@@ -156,12 +172,12 @@
     <main>
         <p>Loren ipsum doodah watsit</p>
         <form action="#" method="get">
-            <div class="period-selector">
-                <fieldset class="period-selector__fields">
-                    <legend class="period-selector__legend">When do you want to stay?</legend>
-                    <input class="period-selector__start-date" id="start-date" type="date" placeholder="Arrival"
+            <div class="period-fields">
+                <fieldset class="period-fields__fields">
+                    <legend class="period-fields__legend">When do you want to stay?</legend>
+                    <input class="period-fields__start-date" id="start-date" type="date" placeholder="Arrival"
                         required disabled />
-                    <input class="period-selector__end-date" id="end-date" type="date" placeholder="Departure" required
+                    <input class="period-fields__end-date" id="end-date" type="date" placeholder="Departure" required
                         disabled />
                     <div class="popup">
 
@@ -172,7 +188,7 @@
 
                             <a class="close" href="#">&times;</a>
 
-                            <div class="calendar">
+                            <div class="period-selector calendar">
                                 <table class="calendar__header">
                                     <caption></caption>
                                     <thead>
@@ -188,221 +204,217 @@
                                     </thead>
 
                                 </table>
-                                <div class="calendar__scroll-box">
+                                <div class="calendar__scroll-box calendar__component">
+
                                     <table class="calendar__month">
-                                        <caption><span>APRIL</span></caption>
+                                        <caption><span>September</span></caption>
                                         <tbody>
                                             <tr>
                                                 <td></td>
                                                 <td></td>
-                                                <td></td>
-                                                <td date="01-4-2020" class="calendar__day--unavailable">1</td>
-                                                <td date="02-4-2020" class="calendar__day--unavailable">2</td>
-                                                <td date="03-4-2020" class="calendar__day--unavailable">3</td>
-                                                <td date="04-4-2020" class="calendar__day--unavailable">4</td>
+                                                <td class="calendar__day" date="2020-8-1">1</td>
+                                                <td class="calendar__day" date="2020-8-2">2</td>
+                                                <td class="calendar__day" date="2020-8-3">3</td>
+                                                <td class="calendar__day" date="2020-8-4">4</td>
+                                                <td class="calendar__day" date="2020-8-5">5</td>
                                             </tr>
                                             <tr>
-                                                <td date="05-4-2020">5</td>
-                                                <td date="06-4-2020"">6</td>
-                                                                <td date=" 07-4-2020">7</td>
-                                                <td date="08-4-2020">8</td>
-                                                <td date="09-4-2020">9</td>
-                                                <td date="10-4-2020">10</td>
-                                                <td date="11-4-2020">11</td>
+                                                <td class="calendar__day calendar__day--unavailable" date="2020-8-6">6                            </td>
+                                                <td class="calendar__day calendar__day--unavailable" date="2020-8-7">7
+                                                </td>
+                                                <td class="calendar__day calendar__day--unavailable" date="2020-8-8">8
+                                                </td>
+                                                <td class="calendar__day calendar__day--unavailable" date="2020-8-9">9
+                                                </td>
+                                                <td class="calendar__day calendar__day--unavailable" date="2020-8-10">10
+                                                </td>
+                                                <td class="calendar__day calendar__day--unavailable" date="2020-8-11">11
+                                                </td>
+                                                <td class="calendar__day calendar__day--unavailable" date="2020-8-12">12
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td date="12-4-2020" class="calendar__day--unavailable">12</td>
-                                                <td date="13-4-2020" class="calendar__day--unavailable">13</td>
-                                                <td date="14-4-2020" class="calendar__day--unavailable">14</td>
-                                                <td date="15-4-2020" class="calendar__day--unavailable">15</td>
-                                                <td date="16-4-2020" class="calendar__day--unavailable">16</td>
-                                                <td date="17-4-2020" class="calendar__day--unavailable">17</td>
-                                                <td date="18-4-2020" class="calendar__day--unavailable">18</td>
+                                                <td class="calendar__day" date="2020-8-13">13</td>
+                                                <td class="calendar__day" date="2020-8-14">14</td>
+                                                <td class="calendar__day" date="2020-8-15">15</td>
+                                                <td class="calendar__day" date="2020-8-16">16</td>
+                                                <td class="calendar__day" date="2020-8-17">17</td>
+                                                <td class="calendar__day" date="2020-8-18">18</td>
+                                                <td class="calendar__day" date="2020-8-19">19</td>
                                             </tr>
                                             <tr>
-                                                <td date="19-4-2020">19</td>
-                                                <td date="20-4-2020">20</td>
-                                                <td date="21-4-2020">21</td>
-                                                <td date="22-4-2020">22</td>
-                                                <td date="23-4-2020">23</td>
-                                                <td date="24-4-2020">24</td>
-                                                <td date="25-4-2020">25</td>
+                                                <td class="calendar__day" date="2020-8-20">20</td>
+                                                <td class="calendar__day" date="2020-8-21">21</td>
+                                                <td class="calendar__day" date="2020-8-22">22</td>
+                                                <td class="calendar__day" date="2020-8-23">23</td>
+                                                <td class="calendar__day" date="2020-8-24">24</td>
+                                                <td class="calendar__day" date="2020-8-25">25</td>
+                                                <td class="calendar__day" date="2020-8-26">26</td>
                                             </tr>
                                             <tr>
-                                                <td date="03-4-2020">26</td>
-                                                <td date="31-4-2020">27</td>
-                                                <td date="30-4-2020">28</td>
-                                                <td date="29-4-2020">29</td>
-                                                <td date="30-4-2020">30</td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </tbody>
-
-                                    </table>
-                                    <table class="calendar__month">
-                                        <caption><span>MAY</span></caption>
-                                        <tbody>
-                                            <tr>
-                                                <td date="02-5-2020">3</td>
-                                                <td date="02-5-2020">4</td>
-                                                <td date="02-5-2020">5</td>
-                                                <td date="02-5-2020">6</td>
-                                                <td date="02-5-2020">7</td>
-                                                <td date="02-5-2020">8</td>
-                                                <td date="02-5-2020">9</td>
-                                            </tr>
-                                            <tr>
-                                                <td date="02-5-2020">10</td>
-                                                <td date="02-5-2020">11</td>
-                                                <td date="02-5-2020">12</td>
-                                                <td date="02-5-2020">13</td>
-                                                <td date="02-5-2020">14</td>
-                                                <td date="02-5-2020">15</td>
-                                                <td date="02-5-2020">16</td>
-                                            </tr>
-                                            <tr>
-                                                <td date="02-5-2020">17</td>
-                                                <td date="02-5-2020">18</td>
-                                                <td date="02-5-2020">19</td>
-                                                <td date="02-5-2020">20</td>
-                                                <td date="02-5-2020">21</td>
-                                                <td date="02-5-2020">22</td>
-                                                <td date="02-5-2020">23</td>
-                                            </tr>
-                                            <tr>
-
-                                                <td date="02-5-2020">24</td>
-                                                <td date="02-5-2020">25</td>
-                                                <td date="02-5-2020">26</td>
-                                                <td date="02-5-2020">27</td>
-                                                <td date="02-5-2020">28</td>
-                                                <td date="02-5-2020">29</td>
-                                                <td date="02-5-2020">30</td>
-                                            </tr>
-                                        </tbody>
-
-
-                                    </table>
-                                    <table class="calendar__month">
-                                        <caption><span>JUNE</span></caption>
-                                        <tbody>
-                                            <tr>
-                                                <td date="02-6-2020">1</td>
-                                                <td date="02-6-2020">2</td>
-                                                <td date="02-6-2020">3</td>
-                                                <td date="02-6-2020">4</td>
-                                                <td date="02-6-2020">5</td>
-                                                <td date="02-6-2020">6</td>
-                                                <td date="02-6-2020">7</td>
-                                            </tr>
-                                            <tr>
-
-                                                <td date="02-6-2020">8</td>
-                                                <td date="02-6-2020">9</td>
-                                                <td date="02-6-2020">10</td>
-                                                <td date="02-6-2020">11</td>
-                                                <td date="02-6-2020">12</td>
-                                                <td date="02-6-2020">13</td>
-                                                <td date="02-6-2020">14</td>
-                                            </tr>
-                                            <tr>
-
-                                                <td date="02-6-2020">15</td>
-                                                <td date="02-6-2020">16</td>
-                                                <td date="02-6-2020">17</td>
-                                                <td date="02-6-2020">19</td>
-                                                <td date="02-6-2020">20</td>
-                                                <td date="02-6-2020">21</td>
-                                                <td date="02-6-2020">22</td>
-                                            </tr>
-                                            <tr>
-
-
-                                                <td date="02-6-2020">23</td>
-                                                <td date="02-6-2020">24</td>
-                                                <td date="02-6-2020">25</td>
-                                                <td date="02-6-2020">26</td>
-                                                <td date="02-6-2020">27</td>
-                                                <td date="02-6-2020">28</td>
-                                                <td date="02-6-2020">29</td>
-                                            </tr>
-
-                                            <tr>
-
-                                                <td date="02-6-2020">30</td>
-                                                <td date="02-6-2020">31</td>
-                                                <td></td>
+                                                <td class="calendar__day" date="2020-8-27">27</td>
+                                                <td class="calendar__day" date="2020-8-28">28</td>
+                                                <td class="calendar__day" date="2020-8-29">29</td>
+                                                <td class="calendar__day" date="2020-8-30">30</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
                                             </tr>
                                         </tbody>
-
                                     </table>
-
                                     <table class="calendar__month">
-                                        <caption><span>JULY</span></caption>
+                                        <caption><span>October</span></caption>
                                         <tbody>
                                             <tr>
-
-                                            </tr>
-                                            <tr>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
-                                                <td date="02-7-2020">1</td>
-                                                <td date="02-7-2020">2</td>
-                                                <td date="02-7-2020">3</td>
-                                                <td date="02-7-2020">4</td>
+                                                <td></td>
+                                                <td class="calendar__day" date="2020-9-1">1</td>
+                                                <td class="calendar__day" date="2020-9-2">2</td>
+                                                <td class="calendar__day" date="2020-9-3">3</td>
                                             </tr>
                                             <tr>
-
-                                                <td date="02-7-2020">5</td>
-                                                <td date="02-7-2020">6</td>
-                                                <td date="02-7-2020">7</td>
-                                                <td date="02-7-2020">8</td>
-                                                <td date="02-7-2020">9</td>
-                                                <td date="02-7-2020">10</td>
-                                                <td date="02-7-2020">11</td>
+                                                <td class="calendar__day" date="2020-9-4">4</td>
+                                                <td class="calendar__day" date="2020-9-5">5</td>
+                                                <td class="calendar__day" date="2020-9-6">6</td>
+                                                <td class="calendar__day" date="2020-9-7">7</td>
+                                                <td class="calendar__day" date="2020-9-8">8</td>
+                                                <td class="calendar__day" date="2020-9-9">9</td>
+                                                <td class="calendar__day" date="2020-9-10">10</td>
                                             </tr>
                                             <tr>
-
-                                                <td date="02-7-2020">12</td>
-                                                <td date="02-7-2020">13</td>
-                                                <td date="02-7-2020">14</td>
-                                                <td date="02-7-2020">15</td>
-                                                <td date="02-7-2020">16</td>
-                                                <td date="02-7-2020">17</td>
-                                                <td date="02-7-2020">18</td>
+                                                <td class="calendar__day" date="2020-9-11">11</td>
+                                                <td class="calendar__day" date="2020-9-12">12</td>
+                                                <td class="calendar__day" date="2020-9-13">13</td>
+                                                <td class="calendar__day" date="2020-9-14">14</td>
+                                                <td class="calendar__day" date="2020-9-15">15</td>
+                                                <td class="calendar__day" date="2020-9-16">16</td>
+                                                <td class="calendar__day" date="2020-9-17">17</td>
                                             </tr>
                                             <tr>
-
-                                                <td date="02-7-2020">19</td>
-                                                <td date="02-7-2020">20</td>
-                                                <td date="02-7-2020">21</td>
-                                                <td date="02-7-2020">22</td>
-                                                <td date="02-7-2020">23</td>
-                                                <td date="02-7-2020">24</td>
-                                                <td date="02-7-2020">25</td>
+                                                <td class="calendar__day" date="2020-9-18">18</td>
+                                                <td class="calendar__day" date="2020-9-19">19</td>
+                                                <td class="calendar__day" date="2020-9-20">20</td>
+                                                <td class="calendar__day" date="2020-9-21">21</td>
+                                                <td class="calendar__day" date="2020-9-22">22</td>
+                                                <td class="calendar__day" date="2020-9-23">23</td>
+                                                <td class="calendar__day" date="2020-9-24">24</td>
                                             </tr>
                                             <tr>
-
-                                                <td date="02-7-2020">26</td>
-                                                <td date="02-7-2020">27</td>
-                                                <td date="02-7-2020">28</td>
-                                                <td date="02-7-2020">29</td>
-                                                <td date="02-7-2020">30</td>
-                                                <td date="02-7-2020">31</td>
+                                                <td class="calendar__day" date="2020-9-25">25</td>
+                                                <td class="calendar__day" date="2020-9-26">26</td>
+                                                <td class="calendar__day" date="2020-9-27">27</td>
+                                                <td class="calendar__day" date="2020-9-28">28</td>
+                                                <td class="calendar__day" date="2020-9-29">29</td>
+                                                <td class="calendar__day" date="2020-9-30">30</td>
+                                                <td class="calendar__day" date="2020-9-31">31
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="calendar__month">
+                                        <caption><span>November</span></caption>
+                                        <tbody>
+                                            <tr>
+                                                <td class="calendar__day" date="2020-10-1">1</td>
+                                                <td class="calendar__day" date="2020-10-2">2</td>
+                                                <td class="calendar__day" date="2020-10-3">3</td>
+                                                <td class="calendar__day" date="2020-10-4">4</td>
+                                                <td class="calendar__day" date="2020-10-5">5</td>
+                                                <td class="calendar__day" date="2020-10-6">6</td>
+                                                <td class="calendar__day" date="2020-10-7">7</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="calendar__day" date="2020-10-8">8</td>
+                                                <td class="calendar__day" date="2020-10-9">9</td>
+                                                <td class="calendar__day" date="2020-10-10">10</td>
+                                                <td class="calendar__day" date="2020-10-11">11</td>
+                                                <td class="calendar__day" date="2020-10-12">12</td>
+                                                <td class="calendar__day" date="2020-10-13">13</td>
+                                                <td class="calendar__day" date="2020-10-14">14</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="calendar__day" date="2020-10-15">15</td>
+                                                <td class="calendar__day" date="2020-10-16">16</td>
+                                                <td class="calendar__day" date="2020-10-17">17</td>
+                                                <td class="calendar__day" date="2020-10-18">18</td>
+                                                <td class="calendar__day" date="2020-10-19">19</td>
+                                                <td class="calendar__day" date="2020-10-20">20</td>
+                                                <td class="calendar__day" date="2020-10-21">21</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="calendar__day" date="2020-10-22">22</td>
+                                                <td class="calendar__day" date="2020-10-23">23</td>
+                                                <td class="calendar__day" date="2020-10-24">24</td>
+                                                <td class="calendar__day" date="2020-10-25">25</td>
+                                                <td class="calendar__day" date="2020-10-26">26</td>
+                                                <td class="calendar__day" date="2020-10-27">27</td>
+                                                <td class="calendar__day" date="2020-10-28">28</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="calendar__day" date="2020-10-29">29</td>
+                                                <td class="calendar__day" date="2020-10-30">30</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
                                                 <td></td>
                                             </tr>
                                         </tbody>
-
-
-
-
-
                                     </table>
+                                    <table class="calendar__month">
+                                        <caption><span>December</span></caption>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="calendar__day" date="2020-11-1">1</td>
+                                                <td class="calendar__day" date="2020-11-2">2</td>
+                                                <td class="calendar__day" date="2020-11-3">3</td>
+                                                <td class="calendar__day" date="2020-11-4">4</td>
+                                                <td class="calendar__day" date="2020-11-5">5</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="calendar__day" date="2020-11-6">6</td>
+                                                <td class="calendar__day" date="2020-11-7">7</td>
+                                                <td class="calendar__day" date="2020-11-8">8</td>
+                                                <td class="calendar__day" date="2020-11-9">9</td>
+                                                <td class="calendar__day" date="2020-11-10">10</td>
+                                                <td class="calendar__day" date="2020-11-11">11</td>
+                                                <td class="calendar__day" date="2020-11-12">12</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="calendar__day" date="2020-11-13">13</td>
+                                                <td class="calendar__day" date="2020-11-14">14</td>
+                                                <td class="calendar__day" date="2020-11-15">15</td>
+                                                <td class="calendar__day" date="2020-11-16">16</td>
+                                                <td class="calendar__day" date="2020-11-17">17</td>
+                                                <td class="calendar__day" date="2020-11-18">18</td>
+                                                <td class="calendar__day" date="2020-11-19">19</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="calendar__day" date="2020-11-20">20</td>
+                                                <td class="calendar__day" date="2020-11-21">21</td>
+                                                <td class="calendar__day" date="2020-11-22">22</td>
+                                                <td class="calendar__day" date="2020-11-23">23</td>
+                                                <td class="calendar__day" date="2020-11-24">24</td>
+                                                <td class="calendar__day" date="2020-11-25">25</td>
+                                                <td class="calendar__day" date="2020-11-26">26</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="calendar__day" date="2020-11-27">27</td>
+                                                <td class="calendar__day" date="2020-11-28">28</td>
+                                                <td class="calendar__day" date="2020-11-29">29</td>
+                                                <td class="calendar__day" date="2020-11-30">30</td>
+                                                <td class="calendar__day" date="2020-11-31">31</td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+
                                 </div>
                             </div>
 
@@ -419,8 +431,7 @@
 
     <br>
 
-    <script>
-    </script>
+    <script src='./period-selector.js'></script>
 </body>
 
 </html>
